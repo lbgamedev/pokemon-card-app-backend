@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const { Pool } = require('pg');
@@ -8,11 +9,11 @@ app.use(express.json());
 
 // PostgreSQL configuration
 const pool = new Pool({
-  user: 'strapiadmin', // your PostgreSQL username
-  host: 'localhost',
-  database: 'pokemondb', // your PostgreSQL database name
-  password: 'strapidb', // your PostgreSQL password
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
 
 // API Route: Fetch Pokémon cards from Twilight Masquerade set
