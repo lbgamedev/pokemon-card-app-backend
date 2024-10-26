@@ -95,6 +95,6 @@ app.post('/api/cards/:id/ownership', async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+app.listen(3005, () => {
+  console.log('Server running on port 3005');
 });
